@@ -1,19 +1,13 @@
-// Bootstrap Imports
-import Form from 'react-bootstrap/Form'
-import Container from 'react-bootstrap/Container';
+// This file puts all the components together to create the job application form
 
+// Imports
 import NavbarComp from './NavbarComp';
+import {Form, Container} from 'react-bootstrap'
+import PersonalInfoComp from './formComps/PersonalInfoComp';
+import EducationComp from './formComps/EducationComp';
+import FilesComp from './formComps/FilesComp';
 
-function App() {
-
-  const formData = [
-    { label: 'First Name', type: 'FirstName' },
-    { label: 'Last Name', type: 'LastName' },
-    { label: 'Full Name', type: 'FullName' },
-    { label: 'Email', type: 'Email'},
-    { label: 'Mobile Phone Number', type: 'MobilePhone'},
-    { label: 'Work Phone Number', type: 'WorkPhone'}
-  ];
+export default function App() {
 
   return (
     <Container>
@@ -22,46 +16,26 @@ function App() {
 
       <Form>
 
-        {/* Personal Information */}
-        {formData.map((field, index) => (
-          <Form.Group key={index} className="mb-3" controlId={`formGroup${field.type}`}>
-            <Form.Label>{field.label}</Form.Label>
-            <Form.Control type={field.type} placeholder={`Enter ${field.label}`} />
-          </Form.Group>
-        ))}
+        <h4 className='text-center'> Personal Information </h4>
+        <PersonalInfoComp/>
+        <hr></hr>
+      
+        <h4 className='text-center'>Files</h4>
+        <FilesComp/>
+        <hr></hr>
 
+        <h4 className='text-center'>Education</h4>
+        <EducationComp/>
         <hr></hr>
         
-        {/* Files */}
-        <Form.Group controlId="formFile" className="mb-3">
-          <Form.Label> Resume </Form.Label>
-          <Form.Control type="file" />
-        </Form.Group>
+        <h4 className='text-center'>Work Experience</h4>
+        {/* Make and add work experience component*/}
+        <hr></hr>
 
-        <Form.Group controlId="formFile" className="mb-3">
-          <Form.Label> Cover Letter </Form.Label>
-          <Form.Control type="file" />
-        </Form.Group>
-
-
-        <Form.Group controlId="formFile" className="mb-3">
-          <Form.Label> Transcript </Form.Label>
-          <Form.Control type="file" />
-        </Form.Group>
-
-        {/* Education */}
-
-        
-
-        {/* Work Experience */}
-
-        
-
-        {/* Skills */}
+        <h4 className='text-center'>Skills</h4>
+        {/* Make and add skills component*/}
 
       </Form>
     </Container>
   );
 }
-
-export default App;
