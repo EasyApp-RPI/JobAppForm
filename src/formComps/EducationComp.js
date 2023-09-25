@@ -58,6 +58,7 @@ export default function EducationComp() {
               />
             </Col>
           </Form.Group>
+          
           <Form.Group as={Row} className="pb-3">
             <Form.Label column sm={2}>
               Major:
@@ -70,6 +71,7 @@ export default function EducationComp() {
                 onChange={(e) => handleEducationChange(index, e)}
               />
             </Col>
+            
             <Form.Label column sm={2}>
               Graduation Year:
             </Form.Label>
@@ -82,6 +84,7 @@ export default function EducationComp() {
               />
             </Col>
           </Form.Group>
+
           {index > 0 && (
             <Button variant="danger" onClick={() => handleRemoveEducation(index)}>
               Remove
