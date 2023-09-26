@@ -2,7 +2,7 @@
 
 // Imports
 import NavbarComp from './NavbarComp';
-import {Form, Container} from 'react-bootstrap'
+import {Form, Container, Button, Row, FormGroup} from 'react-bootstrap'
 import PersonalInfoComp from './formComps/PersonalInfoComp';
 import EducationComp from './formComps/EducationComp';
 import FilesComp from './formComps/FilesComp';
@@ -32,7 +32,12 @@ export default function App() {
           
           <h4 className='text-center'>Work Experience</h4>
           <WorkComp/>
-          <hr className='mt-3'></hr>
+
+          <FormGroup as={Row} className='mt-5 mb-3'>
+            <Button variant="primary" type="submit">
+              Submit form
+            </Button>
+          </FormGroup>
 
         </Form>
       </Container>
