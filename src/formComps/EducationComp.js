@@ -5,6 +5,17 @@ import { useState } from "react";
 import { Form, Row, Col, Button } from "react-bootstrap"
 
 export default function EducationComp() {
+  const degreeOptions = 
+    [ {name: "High School", value: "Highschool"},
+    {name: "Associate's Degree", value: "Associates"},
+    {name: "Bachelor's Degree", value: "Bachelors"},
+    {name: "Master's Degree", value: "Masters"},
+    {name: "Master of Business Administration (M.B.A)", value: "MBA"},
+    {name: "Juris Doctor (J.D.)", value: "JD"},
+    {name: "Doctor of Medicine (M.D.)", value: "MD"},
+    {name: "Doctor of Philosophy (Ph.D.)", value: "PHD"}
+    ]
+
   const [education, setEducation] = useState([
     {
       school: '',
@@ -40,8 +51,7 @@ export default function EducationComp() {
             </Form.Label>
             <Col sm={4}>
               <Form.Control
-                type="text"
-                name="school"
+                type="school"
                 value={edu.school}
                 onChange={(e) => handleEducationChange(index, e)}
               />
@@ -50,12 +60,12 @@ export default function EducationComp() {
               Degree:
             </Form.Label>
             <Col sm={4}>
-              <Form.Control
-                type="text"
-                name="degree"
-                value={edu.degree}
-                onChange={(e) => handleEducationChange(index, e)}
-              />
+              <Form.Select aria-label="degree">
+                <option key={0} value="none">Select a Degree</option>
+                {degreeOptions.map((option,index) => (
+                  <option key={index+1} value={option.va}> {option.name} </option>
+                ))}
+              </Form.Select>
             </Col>
           </Form.Group>
           
@@ -63,10 +73,9 @@ export default function EducationComp() {
             <Form.Label column sm={2}>
               Major:
             </Form.Label>
-            <Col sm={4}>
+            <Col sm={4}> 
               <Form.Control
-                type="text"
-                name="major"
+                type="major"
                 value={edu.major}
                 onChange={(e) => handleEducationChange(index, e)}
               />
@@ -77,8 +86,7 @@ export default function EducationComp() {
             </Form.Label>
             <Col sm={4}>
               <Form.Control
-                type="text"
-                name="graduationYear"
+                type="graduationYear"
                 value={edu.graduationYear}
                 onChange={(e) => handleEducationChange(index, e)}
               />
