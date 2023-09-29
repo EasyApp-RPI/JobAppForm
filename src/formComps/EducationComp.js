@@ -21,12 +21,12 @@ export default function EducationComp() {
       school: '',
       degree: '',
       major: '',
-      graduationYear: '',
+      graduation: '',
     },
   ]);
 
   const handleAddEducation = () => {
-    setEducation([...education, { school: '', degree: '', major: '', graduationYear: '' }]);
+    setEducation([...education, { school: '', degree: '', major: '', graduation: '' }]);
   };
 
   const handleRemoveEducation = (index) => {
@@ -84,13 +84,13 @@ export default function EducationComp() {
             </Col>
             
             <Form.Label column sm={2}>
-              Graduation Year:
+              Graduation Date:
             </Form.Label>
             <Col sm={4}>
               <Form.Control
-                type="number"
-                name="graduationYear"
-                value={edu.graduationYear}
+                type="month"
+                name="graduationMonth"
+                value={edu.graduation}
                 onChange={(e) => handleEducationChange(index, e)}
               />
             </Col>
