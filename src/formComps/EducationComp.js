@@ -51,7 +51,8 @@ export default function EducationComp() {
             </Form.Label>
             <Col sm={4}>
               <Form.Control
-                type="school"
+                type="text"
+                name="school"
                 value={edu.school}
                 onChange={(e) => handleEducationChange(index, e)}
               />
@@ -63,7 +64,7 @@ export default function EducationComp() {
               <Form.Select aria-label="degree">
                 <option key={0} value="none">Select a Degree</option>
                 {degreeOptions.map((option,index) => (
-                  <option key={index+1} value={option.va}> {option.name} </option>
+                  <option key={index+1} value={option.value}> {option.name} </option>
                 ))}
               </Form.Select>
             </Col>
@@ -75,7 +76,8 @@ export default function EducationComp() {
             </Form.Label>
             <Col sm={4}> 
               <Form.Control
-                type="major"
+                type="text"
+                name="major"
                 value={edu.major}
                 onChange={(e) => handleEducationChange(index, e)}
               />
@@ -86,7 +88,8 @@ export default function EducationComp() {
             </Form.Label>
             <Col sm={4}>
               <Form.Control
-                type="graduationYear"
+                type="number"
+                name="graduationYear"
                 value={edu.graduationYear}
                 onChange={(e) => handleEducationChange(index, e)}
               />
@@ -101,7 +104,7 @@ export default function EducationComp() {
         
         </div>
       ))}
-      <Button variant="primary" onClick={handleAddEducation}>
+      <Button variant="primary" className="mt-2" onClick={handleAddEducation}>
         Add Education
       </Button>
     </>

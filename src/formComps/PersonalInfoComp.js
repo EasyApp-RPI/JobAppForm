@@ -10,8 +10,8 @@ export default function PersonalInfoComp() {
     { label: 'Last Name', type: 'LastName' },
     { label: 'Full Name', type: 'FullName' },
     { label: 'Email', type: 'Email'},
-    { label: 'Mobile Phone Number', type: 'MobilePhone'},
-    { label: 'Work Phone Number', type: 'WorkPhone'}
+    { label: 'Mobile Phone Number', type: 'phoneNumber'},
+    { label: 'Work Phone Number', type: 'workPhoneNumber'}
   ];
 
   return (
@@ -19,7 +19,7 @@ export default function PersonalInfoComp() {
       {formData.map((field, index) => (
         <Form.Group key={index} className="mb-3" controlId={`formGroup${field.type}`}>
           <Form.Label>{field.label}</Form.Label>
-          <Form.Control type={field.type} placeholder={`Enter ${field.label}`} />
+          <Form.Control type="text" name={field.type} placeholder={`Enter ${field.label}`} />
         </Form.Group>
       ))}
     </>

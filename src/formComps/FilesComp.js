@@ -16,7 +16,7 @@ export default function FilesComp() {
         {formData.map((field, index) => (
         <Form.Group key={index} className="mb-3">
           <Form.Label>{field.label}</Form.Label>
-          <Form.Control type="file" />
+          <Form.Control type="file" name={field.label}/>
         </Form.Group>
       ))}
     </>

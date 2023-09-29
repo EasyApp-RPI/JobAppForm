@@ -1,3 +1,5 @@
+// This file puts all the components together to create the job application form
+
 import React, { useState } from 'react';
 import { Form, Row, Col, Button } from 'react-bootstrap';
 
@@ -63,7 +65,7 @@ export default function WorkComp() {
             </Form.Label>
             <Col sm={4}>
               <Form.Control
-                type="text"
+                type="date"
                 name="startDate"
                 value={exp.startDate}
                 onChange={(e) => handleExperienceChange(index, e)}
@@ -74,7 +76,7 @@ export default function WorkComp() {
             </Form.Label>
             <Col sm={4}>
               <Form.Control
-                type="text"
+                type="date"
                 name="endDate"
                 value={exp.endDate}
                 onChange={(e) => handleExperienceChange(index, e)}
@@ -96,7 +98,7 @@ export default function WorkComp() {
           )}
         </div>
       ))}
-      <Button variant="primary" onClick={handleAddExperience}>
+      <Button variant="primary" className="mt-2" onClick={handleAddExperience}>
         Add Work Experience
       </Button>
     </>
