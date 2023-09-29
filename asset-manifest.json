@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/JobAppForm/static/css/main.eefc237f.css",
-    "main.js": "/JobAppForm/static/js/main.58413fd6.js",
+    "main.js": "/JobAppForm/static/js/main.ddcb150f.js",
     "index.html": "/JobAppForm/index.html",
     "main.eefc237f.css.map": "/JobAppForm/static/css/main.eefc237f.css.map",
-    "main.58413fd6.js.map": "/JobAppForm/static/js/main.58413fd6.js.map"
+    "main.ddcb150f.js.map": "/JobAppForm/static/js/main.ddcb150f.js.map"
   },
   "entrypoints": [
     "static/css/main.eefc237f.css",
-    "static/js/main.58413fd6.js"
+    "static/js/main.ddcb150f.js"
   ]
 }
