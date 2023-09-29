@@ -88,7 +88,7 @@ export default function EducationComp() {
             </Form.Label>
             <Col sm={4}>
               <Form.Control
-                type="month"
+                type="date"
                 name="graduationMonth"
                 value={edu.graduation}
                 onChange={(e) => handleEducationChange(index, e)}
